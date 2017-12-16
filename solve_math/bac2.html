@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+function solve() {
+var a = document.getElementById('a').value;
+var b = document.getElementById('b').value;
+var c = document.getElementById('c').value;
+var d = b*b - 4*a*c;
+var cand = Math.sqrt(d);
+var line1 = document.getElementById('tb');
+if(d<0){
+line1.innerHTML = 'Phương trình vô nghiệm';
+}else if (d==0) {
+line1.innerHTML = 'Phương trình có nghiệm kép';
+var x = (-b)/(2*a);
+document.getElementById('x1').innerHTML='x= ' + x;
+}else if (d>0) {
+line1.innerHTML = 'Phương trình có 2 nghiệm';
+var x1 = (-b - cand)/(2*a);
+var x2 = (-b + cand)/(2*a);
+document.getElementById('x1').innerHTML='x1= ' + x1;
+document.getElementById('x2').innerHTML='x2= ' + x2;
+}
+}
+</script>
+</head>
+<body>
+<center>
+<h1>Giải phương trình bậc 2</h1>
+<h2>Nhập dữ liệu</h2>
+<p>Nhập giá trị a</p>
+<input id="a" type="text" value="" ></input>
+<p>Nhập giá trị b</p>
+<input id="b" type="text" value="" ></input>
+<p>Nhập giá trị c</p>
+<input id="c" type="text" value="" ></input>
+</br>
+<input type="button" id="btn" value="Giải" onclick="solve()"></input>
+<h2>Đáp số</h2>
+<p id="tb"></p>
+<p id="x1"></p>
+<p id="x2"></p>
+</center>
+</body>
+</html>
